@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        AWS_DEFAULT_REGION = params.AWS_REGION
+        AWS_DEFAULT_REGION = 'ap-southeast-2'
     }
     parameters {
         string(name: 'AWS_REGION', description: 'The AWS region to deploy resources to', defaultValue: 'ap-southeast-2')

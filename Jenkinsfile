@@ -1,12 +1,11 @@
-parameters {
-    string(name: 'AWS_REGION', description: 'The AWS region to deploy resources to', defaultValue: 'ap-southeast-2')
-    choice(name: 'ACTION', choices: ['plan', 'apply', 'destroy'], description: 'Select the Terraform action to perform')
-}
-
 pipeline {
     agent any
     environment {
         AWS_DEFAULT_REGION = params.AWS_REGION
+    }
+    parameters {
+        string(name: 'AWS_REGION', description: 'The AWS region to deploy resources to', defaultValue: 'ap-southeast-2')
+        choice(name: 'ACTION', choices: ['plan', 'apply', 'destroy'], description: 'Select the Terraform action to perform')
     }
     stages {
         stage('Terraform Init') {

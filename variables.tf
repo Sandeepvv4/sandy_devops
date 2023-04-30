@@ -11,7 +11,7 @@ variable "instance_type" {
 }
 
 variable "key_name" {
-  default = "my-server-key"
+  default = "ec2-key-pair"
 }
 
 variable "instance_name" {

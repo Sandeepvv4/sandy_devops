@@ -38,7 +38,8 @@ resource "aws_instance" "my-instance" {
   instance_type = var.instance_type 
   key_name = var.key_name
   vpc_security_group_ids = [aws_security_group.server_sg.id]
-
+  user_data = file("httpd-install.sh")
+  
   tags = {
     Name = var.instance_name
   }

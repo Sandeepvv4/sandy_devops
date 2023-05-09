@@ -51,3 +51,11 @@ resource "aws_instance" "my-instance" {
     Name = var.instance_name
   }
 }
+
+output "public_ip" {
+  value = aws_instance.my-instance.public_ip
+}
+
+output "private_ip" {
+  value = aws_instance.my-instance.private_ip
+}

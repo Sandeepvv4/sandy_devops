@@ -15,5 +15,5 @@ variable "key_name" {
 }
 
 variable "instance_name" {
-  default = "my-ec2-instance"
+  default = "my-webserver"
 }
